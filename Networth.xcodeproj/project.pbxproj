@@ -12,6 +12,9 @@
 		76E2AA1D2B56D3890095E796 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2AA1C2B56D3890095E796 /* Item.swift */; };
 		76E2AA1F2B56D38B0095E796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76E2AA1E2B56D38B0095E796 /* Assets.xcassets */; };
 		76E2AA232B56D38B0095E796 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76E2AA222B56D38B0095E796 /* Preview Assets.xcassets */; };
+		76E2AA2C2B56DC720095E796 /* AssetAllocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2AA2B2B56DC720095E796 /* AssetAllocationView.swift */; };
+		76E2AA2E2B56DC860095E796 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2AA2D2B56DC860095E796 /* PieChart.swift */; };
+		76EC39352B8FE7460051EF4F /* CoinMarketCapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC39342B8FE7460051EF4F /* CoinMarketCapAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		76E2AA1E2B56D38B0095E796 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76E2AA202B56D38B0095E796 /* Networth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Networth.entitlements; sourceTree = "<group>"; };
 		76E2AA222B56D38B0095E796 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		76E2AA2B2B56DC720095E796 /* AssetAllocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetAllocationView.swift; sourceTree = "<group>"; };
+		76E2AA2D2B56DC860095E796 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		76EC39342B8FE7460051EF4F /* CoinMarketCapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMarketCapAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,8 @@
 				76E2AA182B56D3890095E796 /* NetworthApp.swift */,
 				76E2AA1A2B56D3890095E796 /* ContentView.swift */,
 				76E2AA1C2B56D3890095E796 /* Item.swift */,
+				76E2AA2A2B56DBD60095E796 /* View */,
+				76E2AA292B56DBCC0095E796 /* Model */,
 				76E2AA1E2B56D38B0095E796 /* Assets.xcassets */,
 				76E2AA202B56D38B0095E796 /* Networth.entitlements */,
 				76E2AA212B56D38B0095E796 /* Preview Content */,
@@ -70,6 +78,23 @@
 				76E2AA222B56D38B0095E796 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		76E2AA292B56DBCC0095E796 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76EC39342B8FE7460051EF4F /* CoinMarketCapAPI.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		76E2AA2A2B56DBD60095E796 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76E2AA2B2B56DC720095E796 /* AssetAllocationView.swift */,
+				76E2AA2D2B56DC860095E796 /* PieChart.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +168,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				76E2AA1B2B56D3890095E796 /* ContentView.swift in Sources */,
+				76E2AA2C2B56DC720095E796 /* AssetAllocationView.swift in Sources */,
 				76E2AA1D2B56D3890095E796 /* Item.swift in Sources */,
 				76E2AA192B56D3890095E796 /* NetworthApp.swift in Sources */,
+				76EC39352B8FE7460051EF4F /* CoinMarketCapAPI.swift in Sources */,
+				76E2AA2E2B56DC860095E796 /* PieChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
