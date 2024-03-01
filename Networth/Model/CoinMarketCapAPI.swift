@@ -91,10 +91,15 @@ extension CoinMarketCapAPI {
         let id: Int
         let name: String
         let symbol: String
+//        let quote: Quoteee//[String: MarketQuote]
         let quote: [String: MarketQuote]
     }
     
+    struct Quoteee: Codable {
+        let USD: MarketQuote
+    }
+    
     struct MarketQuote: Codable {
-        let price: Double
+        let price: Double?
     }
 }
