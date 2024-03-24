@@ -24,11 +24,13 @@ struct ImpermanentLossView: View {
     }
 }
 
+
+
 #Preview {
     ImpermanentLossView()
 }
 
-struct LiquidityPool: Hashable, Identifiable {
+struct LiquidityPoolItem: Hashable, Identifiable {
 //    let ticker: String = ""
     let tickerA: String
     let tickerB: String
@@ -56,24 +58,15 @@ struct LiquidityPool: Hashable, Identifiable {
 @MainActor
 class ImpermanentLossTracker: ObservableObject {
     
-    @Published var liquidityPools: [LiquidityPool] = []
+    @Published var liquidityPools: [LiquidityPoolItem] = []
     
     private let api = CoinMarketCapAPI()
     
     func consolidate() async throws {
-        let mockDeposits: [LPDeposit] = [
-            .init( // volatile pool
-                tokenX: .init(ticker: "BTC", price: 51_661.97),
-                tokenY: .init(ticker: "AVAX", price: 39.76)
-            ),
-            .init( // stable pool
-                tokenX: .init(ticker: "AERO", price: 0.8535),
-                tokenY: .init(ticker: "USDC", price: 1.0008)
-            )
-        ]
+        let deposits = try DataLoader.load([LPDeposit].self, fromFile: "lp-deposits")
         
-        let tickers = Array(Set(mockDeposits
-            .map { [$0.tokenX.ticker, $0.tokenY.ticker] }
+        let tickers = Array(Set(deposits
+            .map { [$0.tokenA.ticker, $0.tokenB.ticker] }
             .flatMap { $0 }
         ))
         
@@ -93,17 +86,17 @@ class ImpermanentLossTracker: ObservableObject {
             return Quote(name: coin.name, symbol: coin.symbol, price: coin.quote["USD"]?.price ?? 0.0)
         })
         
-        var pools: [LiquidityPool] = []
-        for deposit in mockDeposits {
+        var pools: [LiquidityPoolItem] = []
+        for deposit in deposits {
             
-            let quoteX = latestQuotes.quotes[deposit.tokenX.ticker]?.price ?? 0
-            let quoteY = latestQuotes.quotes[deposit.tokenY.ticker]?.price ?? 0
+            let quoteX = latestQuotes.quotes[deposit.tokenA.ticker]?.price ?? 0
+            let quoteY = latestQuotes.quotes[deposit.tokenB.ticker]?.price ?? 0
             
-            let lp = LiquidityPool(
-                tickerA: deposit.tokenX.ticker,
-                tickerB: deposit.tokenY.ticker,
-                aQuoteAtDeposit: deposit.tokenX.price,
-                bQuoteAtDeposit: deposit.tokenY.price,
+            let lp = LiquidityPoolItem(
+                tickerA: deposit.tokenA.ticker,
+                tickerB: deposit.tokenB.ticker,
+                aQuoteAtDeposit: deposit.tokenA.price,
+                bQuoteAtDeposit: deposit.tokenB.price,
                 aQuoteNow: quoteX,
                 bQuoteNow: quoteY)
             pools.append(lp)

@@ -7,12 +7,12 @@ func calculateImpermanentLoss(px0: Double, py0: Double, px1: Double, py1: Double
     return 2 * sqrt(k) / (1 + k) - 1
 }
 
-struct LPDeposit {
+struct LPDeposit: Codable {
 //    let timestamp:
-    let tokenX: Token
-    let tokenY: Token
+    let tokenA: Token
+    let tokenB: Token
     
-    struct Token {
+    struct Token: Codable {
         let ticker: String
         let price: Double
     }
