@@ -26,8 +26,9 @@ struct NetworthApp: App {
 
     var body: some Scene {
         WindowGroup {
+            MainView()
 //            ContentView()
-            AssetAllocationView(controller: AssetAllocationController(type: .crypto))
+//            AssetAllocationView(controller: AssetAllocationController(type: .crypto))
         }
         .modelContainer(sharedModelContainer)
     }

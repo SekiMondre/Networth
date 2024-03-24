@@ -91,7 +91,6 @@ extension CoinMarketCapAPI {
         let id: Int
         let name: String
         let symbol: String
-//        let quote: Quoteee//[String: MarketQuote]
         let quote: [String: MarketQuote]
     }
     

@@ -12,6 +12,9 @@
 		7641690A2B9150A1000AA123 /* PortfolioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764169092B9150A1000AA123 /* PortfolioService.swift */; };
 		7641690C2B91512B000AA123 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641690B2B91512B000AA123 /* Currency.swift */; };
 		7641690E2B91519C000AA123 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641690D2B91519C000AA123 /* Price.swift */; };
+		765EA5402BB071F500BDC68C /* ImpermanentLoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765EA53F2BB071F500BDC68C /* ImpermanentLoss.swift */; };
+		765EA5422BB073C200BDC68C /* ImpermanentLossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765EA5412BB073C200BDC68C /* ImpermanentLossView.swift */; };
+		765EA5442BB0742200BDC68C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765EA5432BB0742200BDC68C /* MainView.swift */; };
 		768084892B9114B3003C13FA /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 768084882B9114B3003C13FA /* config.json */; };
 		76CA53132B913FD000519F68 /* quotes-latest-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 76CA53122B913FD000519F68 /* quotes-latest-mock.json */; };
 		76D0DC862B915FE900D46B2B /* AssetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0DC852B915FE900D46B2B /* AssetController.swift */; };
@@ -34,6 +37,9 @@
 		764169092B9150A1000AA123 /* PortfolioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioService.swift; sourceTree = "<group>"; };
 		7641690B2B91512B000AA123 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		7641690D2B91519C000AA123 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		765EA53F2BB071F500BDC68C /* ImpermanentLoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpermanentLoss.swift; sourceTree = "<group>"; };
+		765EA5412BB073C200BDC68C /* ImpermanentLossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpermanentLossView.swift; sourceTree = "<group>"; };
+		765EA5432BB0742200BDC68C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = "Networth/Preview Content/MainView.swift"; sourceTree = SOURCE_ROOT; };
 		768084882B9114B3003C13FA /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		76CA53122B913FD000519F68 /* quotes-latest-mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "quotes-latest-mock.json"; sourceTree = "<group>"; };
 		76D0DC852B915FE900D46B2B /* AssetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetController.swift; sourceTree = "<group>"; };
@@ -63,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		765EA53E2BB071DB00BDC68C /* ImpermanentLoss */ = {
+			isa = PBXGroup;
+			children = (
+				765EA53F2BB071F500BDC68C /* ImpermanentLoss.swift */,
+			);
+			path = ImpermanentLoss;
+			sourceTree = "<group>";
+		};
 		76E2AA0C2B56D3890095E796 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +122,7 @@
 		76E2AA292B56DBCC0095E796 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				765EA53E2BB071DB00BDC68C /* ImpermanentLoss */,
 				76FD5ECC2B91616C00F5B4F5 /* LegacyStuff.swift */,
 				76EC39342B8FE7460051EF4F /* CoinMarketCapAPI.swift */,
 				76D0DC852B915FE900D46B2B /* AssetController.swift */,
@@ -124,8 +139,10 @@
 		76E2AA2A2B56DBD60095E796 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				765EA5432BB0742200BDC68C /* MainView.swift */,
 				76E2AA2B2B56DC720095E796 /* AssetAllocationView.swift */,
 				76E2AA2D2B56DC860095E796 /* PieChart.swift */,
+				765EA5412BB073C200BDC68C /* ImpermanentLossView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,15 +220,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765EA5422BB073C200BDC68C /* ImpermanentLossView.swift in Sources */,
 				76D0DC862B915FE900D46B2B /* AssetController.swift in Sources */,
 				76E2AA1B2B56D3890095E796 /* ContentView.swift in Sources */,
 				76E2AA2C2B56DC720095E796 /* AssetAllocationView.swift in Sources */,
 				76E2AA1D2B56D3890095E796 /* Item.swift in Sources */,
 				76FD5ECD2B91616C00F5B4F5 /* LegacyStuff.swift in Sources */,
+				765EA5402BB071F500BDC68C /* ImpermanentLoss.swift in Sources */,
 				764169062B914D1C000AA123 /* Config.swift in Sources */,
 				76FD5ECF2B9161A700F5B4F5 /* Exchange.swift in Sources */,
 				764169082B914FCF000AA123 /* DataLoader.swift in Sources */,
 				76E2AA192B56D3890095E796 /* NetworthApp.swift in Sources */,
+				765EA5442BB0742200BDC68C /* MainView.swift in Sources */,
 				7641690C2B91512B000AA123 /* Currency.swift in Sources */,
 				7641690A2B9150A1000AA123 /* PortfolioService.swift in Sources */,
 				7641690E2B91519C000AA123 /* Price.swift in Sources */,
